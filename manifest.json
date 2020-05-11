@@ -1,0 +1,47 @@
+{
+  "name": "Getting Started Example",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Build an Extension!",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "https://pastebin.com/"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popups/company-not-found.html",
+    "default_icon": {
+      "16": "images/icon_gray_16.png",
+      "32": "images/icon_gray_32.png",
+      "48": "images/icon_gray_48.png",
+      "128": "images/icon_gray_128.png"
+    },
+    "default_title": "SalesForce Verify"
+  },
+  "icons": {
+    "16": "images/icon_blue_16.png",
+    "32": "images/icon_blue_32.png",
+    "48": "images/icon_blue_48.png",
+    "128": "images/icon_blue_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
